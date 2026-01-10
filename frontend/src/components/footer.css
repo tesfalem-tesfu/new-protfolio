@@ -1,0 +1,12 @@
+.footer {
+  background: #0f172a;
+  color: #cbd5f5;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+
+.footer-tech {
+  font-size: 12px;
+  color: #94a3b8;
+}

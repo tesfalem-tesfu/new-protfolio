@@ -1,0 +1,138 @@
+.projects-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.projects-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.projects-subtitle {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 70px;
+  font-size: 1.1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+}
+
+/* Modern Image Card with Glass Overlay */
+.project-card.image {
+  height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.project-card.image:hover {
+  transform: translateY(-12px) perspective(1000px) rotateX(4deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* Background Images (real dashboard screenshots) */
+.pharmacy-bg {
+  background: url("https://multipurposethemes.com/wp-content/uploads/2025/09/coup-dashboard-mpt-blog-2.jpg") center/cover no-repeat;
+}
+
+.school-bg {
+  background: url("https://s3.envato.com/files/342637493/Image%20Preview%20Set%20PSD/07_Student%20Details.png") center/cover no-repeat;
+}
+
+.coming-soon-bg {
+  background: linear-gradient(135deg, #1e293b 0%, #4c1d95 100%);
+}
+
+/* Frosted Glass Overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.project-overlay h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.project-overlay p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: #cbd5e1;
+}
+
+/* Glowing Tech Tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.project-tech span {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-tech span:hover {
+  background: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Animated Button */
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #8b5cf6;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #a78bfa;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+}
+
+.coming-soon {
+  color: #e9d5ff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}

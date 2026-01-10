@@ -1,0 +1,79 @@
+.skills-section {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background-image: url("https://www.shutterstock.com/image-vector/abstract-technology-flow-glowing-blue-600nw-2655988379.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  color: #e2e8f0;
+  position: relative;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.skills-title {
+  position: relative;
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Glassmorphism Skill Card */
+.skill-card {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 24px;
+  padding: 40px 20px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card:hover {
+  transform: translateY(-15px) perspective(1000px) rotateX(6deg);
+  border-color: #a78bfa;
+  box-shadow: 0 40px 80px rgba(139, 92, 246, 0.25);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+/* Skill Icon with subtle animation */
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  transition: all 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.15) translateY(-6px);
+}
+
+/* Skill Name */
+.skill-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  letter-spacing: 0.5px;
+}
