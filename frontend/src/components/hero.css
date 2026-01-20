@@ -149,3 +149,105 @@
     height: 360px;
   }
 }
+/* Hero Social Icons */
+.hero-social {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;          /* Space above icons */
+  justify-content: flex-start; /* Left align on desktop, center on mobile if needed */
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  color: #0d6efd;           /* or any accent color you prefer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero-social {
+    justify-content: center;
+    margin-top: 35px;
+  }
+}
+/* ────────────────────────────────────────────────
+   Transparent Decorations – Subtle & Modern
+───────────────────────────────────────────────── */
+
+.hero-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;           /* Doesn't block clicks */
+  overflow: hidden;
+  z-index: 1;                     /* Behind content but above overlay if needed */
+}
+
+/* Floating particles (circles/dots) */
+.particle {
+  position: absolute;
+  background: rgba(100, 180, 255, 0.25); /* soft blue-cyan, very transparent */
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(100, 180, 255, 0.4);
+  animation: float 18s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { width: 120px; height: 120px; top: 15%; left: 8%;  animation-duration: 22s; }
+.particle:nth-child(2) { width: 80px;  height: 80px;  top: 65%; left: 12%; animation-duration: 26s; animation-delay: 4s; }
+.particle:nth-child(3) { width: 160px; height: 160px; top: 40%; right: 10%; animation-duration: 30s; animation-delay: 8s; }
+.particle.slow   { animation-duration: 40s; }
+.particle.tiny   { width: 40px; height: 40px; background: rgba(180, 120, 255, 0.3); box-shadow: 0 0 15px rgba(180, 120, 255, 0.35); }
+
+/* Soft glowing blobs (more organic feel) */
+.glow-blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 70%, rgba(13, 110, 253, 0.12), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.7;
+  animation: blob-move 25s infinite alternate ease-in-out;
+}
+
+.glow-blob.second {
+  background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.10), transparent 70%);
+  animation-delay: -12s;
+  width: 400px;
+  height: 400px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100%   { transform: translate(0, 0) rotate(0deg); }
+  25%        { transform: translate(60px, -40px) rotate(10deg); }
+  50%        { transform: translate(-30px, 80px) rotate(-15deg); }
+  75%        { transform: translate(40px, -60px) rotate(5deg); }
+}
+
+@keyframes blob-move {
+  0%   { transform: translate(-10%, -10%) scale(1); }
+  50%  { transform: translate(15%, 20%) scale(1.15); }
+  100% { transform: translate(-5%, 10%) scale(0.95); }
+}
+
+/* Make sure content stays above decorations */
+.hero-container {
+  position: relative;
+  z-index: 2;
+}

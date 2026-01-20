@@ -1,5 +1,4 @@
-/* about.css - ULTRA TRANSPARENT Modern Glassmorphism (2026 Edition) */
-/* Extremely lightweight, airy, and highly transparent design */
+/* about.css - Ultra Transparent Modern Glassmorphism with Warm Brown Tint + Dark/Black Text (2026 Edition) */
 
 .about-section {
   min-height: 100vh;
@@ -7,7 +6,7 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, 
-    rgba(241, 245, 249, 0.6) 0%,   /* Very light slate */
+    rgba(241, 245, 249, 0.6) 0%,   /* Very light slate base */
     rgba(226, 232, 240, 0.4) 50%, 
     rgba(203, 213, 225, 0.5) 100%
   );
@@ -16,212 +15,158 @@
   overflow: hidden;
 }
 
-/* Ultra-subtle floating background particles - barely visible */
+/* Subtle brown overlay for warmth */
 .about-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 15% 85%, rgba(148, 163, 184, 0.08) 0%, transparent 25%),
-    radial-gradient(circle at 85% 15%, rgba(100, 116, 139, 0.06) 0%, transparent 25%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
-  animation: ultraSlowDrift 40s linear infinite;
+  background: rgba(139, 69, 19, 0.08); /* Very light transparent brown overlay */
   pointer-events: none;
-  opacity: 0.7;
+  z-index: 0;
 }
 
-@keyframes ultraSlowDrift {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(80px, 80px) scale(1.05); }
-}
-
-.about-container {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
-}
-
-/* ULTRA TRANSPARENT Glass Card - Very light touch */
+/* Main glass card - transparent brown */
 .about-glass-card {
-  background: rgba(255, 255, 255, 0.06);           /* Extremely low opacity */
-  backdrop-filter: blur(20px);                     /* Strong blur for frosted effect */
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);      /* Barely visible border */
-  border-radius: 28px;
-  box-shadow: 
-    0 8px 40px rgba(0, 0, 0, 0.04),
-    0 16px 80px rgba(0, 0, 0, 0.03);
-  padding: 4rem 3rem;
-  text-align: center;
   position: relative;
-  overflow: hidden;
-  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  background: rgba(139, 69, 19, 0.18);  /* Core transparent brown */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(181, 101, 29, 0.35);  /* Warm brown border */
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  max-width: 900px;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.25),
+    inset 0 0 20px rgba(181, 101, 29, 0.12); /* subtle inner glow */
+  transition: all 0.4s ease;
+  z-index: 2;
 }
 
 .about-glass-card:hover {
-  background: rgba(255, 255, 255, 0.10);           /* Slightly more visible on hover */
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: 
-    0 12px 50px rgba(0, 0, 0, 0.06),
-    0 24px 100px rgba(0, 0, 0, 0.05);
+    0 25px 60px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(181, 101, 29, 0.18);
 }
 
-/* Very subtle animated overlay - almost invisible */
-.about-glass-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(241, 245, 249, 0.03) 40%,
-    rgba(203, 213, 225, 0.06) 100%
-  );
-  border-radius: 28px;
-  opacity: 0.5;
-  animation: transparentShift 20s ease infinite;
-  pointer-events: none;
-}
-
-@keyframes transparentShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Ultra-minimal inner glow - only on hover */
-.about-glass-card::after {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  background: linear-gradient(45deg, 
-    rgba(255, 255, 255, 0.08), 
-    rgba(226, 232, 240, 0.04)
-  );
-  border-radius: 26px;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  pointer-events: none;
-}
-
-.about-glass-card:hover::after {
-  opacity: 0.6;
-}
-
-/* Very light accent line */
+/* Accent line - warm brown gradient */
 .about-accent-line {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(to right, rgba(148, 163, 184, 0.4), transparent);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(181, 101, 29, 0.7), 
+    transparent
+  );
   border-radius: 2px;
-  margin: 0 auto 2.5rem;
-  opacity: 0.7;
 }
 
+/* Title - now solid dark/black (or keep gradient if preferred) */
 .about-title {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #1e293b, #475569);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 2rem;
-  letter-spacing: -0.8px;
-  opacity: 0.95;
+  color: #111827;               /* near-black / very dark gray */
+  /* Alternative gradient version (commented out): */
+  /* background: linear-gradient(to right, #92400e, #78350f); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
+/* Description - black text */
 .about-description {
-  font-size: 1.3rem;
-  line-height: 1.9;
-  color: #475569;
-  max-width: 900px;
-  margin: 0 auto 4.5rem;
-  opacity: 0.88;
-  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #000000;               /* pure black */
+  margin-bottom: 3rem;
+  text-align: center;
+  opacity: 1;
 }
 
-/* Ultra-transparent Notes Grid */
+/* Notes grid - transparent brown cards */
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 4rem;
 }
 
 .modern-note {
-  background: rgba(255, 255, 255, 0.05);           /* Almost invisible background */
+  background: rgba(139, 69, 19, 0.14); /* lighter transparent brown */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 20px;
+  border: 1px solid rgba(181, 101, 29, 0.3);
+  border-radius: 16px;
   padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.6s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
 }
 
 .modern-note:hover {
-  background: rgba(255, 255, 255, 0.09);
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-}
-
-/* Minimal left accent bar */
-.modern-note::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, 
-    rgba(100, 116, 139, 0.4), 
-    rgba(71, 85, 105, 0.3)
-  );
-  border-radius: 0 6px 6px 0;
-  opacity: 0.7;
+  transform: translateY(-6px);
+  background: rgba(139, 69, 19, 0.22);
+  border-color: rgba(181, 101, 29, 0.5);
+  box-shadow: 0 12px 30px rgba(139, 69, 19, 0.25);
 }
 
 .modern-note h3 {
-  font-size: 1.5rem;
+  color: #78350f;               /* dark warm brown for subheadings */
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #1e293b;
   margin-bottom: 1rem;
-  position: relative;
-  z-index: 2;
-  opacity: 0.95;
 }
 
 .modern-note p {
-  color: #64748b;
+  color: #1f2937;               /* dark slate gray / near-black body text */
+  font-size: 1.05rem;
   line-height: 1.7;
-  position: relative;
-  z-index: 2;
-  opacity: 0.85;
 }
 
-/* Ultra-light floating dots */
+/* Floating subtle brown particles/dots */
 .floating-dots {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 4.5rem;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .floating-dots > div {
-  width: 10px;
-  height: 10px;
-  background: rgba(148, 163, 184, 0.3);
+  position: absolute;
+  background: rgba(181, 101, 29, 0.3);
   border-radius: 50%;
-  animation: ultraFloat 5s ease-in-out infinite;
-  opacity: 0.6;
+  box-shadow: 0 0 20px rgba(181, 101, 29, 0.4);
+  animation: ultraFloat 12s ease-in-out infinite;
+  opacity: 0.5;
 }
 
-.floating-dots > div:nth-child(2) { animation-delay: 0.3s; }
-.floating-dots > div:nth-child(3) { animation-delay: 0.6s; }
+.floating-dots > div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 15%;
+  left: 10%;
+  animation-duration: 18s;
+}
+
+.floating-dots > div:nth-child(2) {
+  width: 70px;
+  height: 70px;
+  top: 70%;
+  right: 12%;
+  animation-duration: 22s;
+  animation-delay: 3s;
+}
+
+.floating-dots > div:nth-child(3) {
+  width: 140px;
+  height: 140px;
+  bottom: 20%;
+  left: 25%;
+  animation-duration: 26s;
+  animation-delay: 7s;
+}
 
 @keyframes ultraFloat {
   0%, 100% {
@@ -229,15 +174,15 @@
     opacity: 0.4;
   }
   50% {
-    transform: translateY(-10px) scale(1.1);
+    transform: translateY(-25px) scale(1.15);
     opacity: 0.7;
   }
 }
 
-/* Responsive - Keep transparency on mobile */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .about-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   
   .about-description {
@@ -246,8 +191,8 @@
   }
   
   .about-glass-card {
-    padding: 3rem 1.5rem;
-    border-radius: 24px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
   }
   
   .notes-grid {

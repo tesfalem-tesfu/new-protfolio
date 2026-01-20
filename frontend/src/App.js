@@ -18,7 +18,7 @@ function App() {
   const renderContent = () => {
     switch (active) {
       case "home":
-        return <Hero />;
+        return <Hero setActive={setActive} />;  // <-- Pass setActive here
       case "about":
         return <About />;
       case "skills":
@@ -28,7 +28,7 @@ function App() {
       case "contact":
         return <Contact />;
       default:
-        return <Hero />;
+        return <Hero setActive={setActive} />;  // <-- Pass setActive here too
     }
   };
 
