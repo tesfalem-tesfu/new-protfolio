@@ -8,23 +8,42 @@ export default function Contact() {
     message: ""
   });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form)
-    });
+    try {
+      const res = await fetch(
+        "https://new-protfolio-backend.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(form)
+        }
+      );
 
-    const data = await res.json();
-    alert(data.message);
+      const data = await res.json();
 
-    setForm({ name: "", email: "", message: "" });
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+
+      alert(data.message || "Message sent successfully ✅");
+
+      setForm({
+        name: "",
+        email: "",
+        message: ""
+      });
+    } catch (error) {
+      alert("Failed to send message ❌. Please try again later.");
+      console.error(error);
+    }
   };
 
   return (
