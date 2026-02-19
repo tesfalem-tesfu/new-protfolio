@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./contact.css";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -47,42 +46,53 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <h2 className="contact-title">Contact Me</h2>
+    <section
+      id="contact"
+      className="flex justify-center items-center py-16 bg-gradient-to-br from-purple-400 via-pink-400 to-red-400"
+    >
+      <div className="w-full max-w-2xl p-8 bg-white rounded-3xl shadow-2xl backdrop-blur-md">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+          Contact Me
+        </h2>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <input
-          className="contact-input"
-          name="name"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <input
+            name="name"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="p-4 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-300 outline-none transition"
+          />
 
-        <input
-          className="contact-input"
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+          <input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="p-4 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-300 outline-none transition"
+          />
 
-        <textarea
-          className="contact-textarea"
-          name="message"
-          placeholder="Your Message"
-          value={form.message}
-          onChange={handleChange}
-          required
-        />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={form.message}
+            onChange={handleChange}
+            required
+            rows={6}
+            className="p-4 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-300 outline-none transition resize-none"
+          />
 
-        <button className="contact-btn" type="submit">
-          Send Message
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl shadow-md transition-all hover:scale-105"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
