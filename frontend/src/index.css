@@ -5,20 +5,62 @@
 /* Enable dark mode via class on html or body */
 @layer base {
   :root {
+    /* Light mode colors */
     --background: #f9fafb;
     --text-primary: #111827;
     --text-secondary: #4b5563;
-    /* Add more variables as needed for your custom colors */
+    --card-bg: #ffffff;
+    --btn-bg: #3b82f6;
+    --btn-text: #ffffff;
+    --btn-hover: #2563eb;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    --transition-speed: 0.3s;
   }
 
   .dark {
     --background: #0f172a;
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
+    --card-bg: #1e293b;
+    --btn-bg: #6366f1;
+    --btn-text: #f1f5f9;
+    --btn-hover: #4f46e5;
+    --shadow: 0 4px 6px rgba(0,0,0,0.3);
   }
 
   body {
     background-color: var(--background);
     color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+
+  /* Cards */
+  .card {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  }
+
+  /* Buttons */
+  .btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform 0.2s;
+  }
+
+  .btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Text secondary */
+  .text-secondary {
+    color: var(--text-secondary);
   }
 }
